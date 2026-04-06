@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "id": 1, "name": "Riya" }
+  ],
+  "books": [
+    { "id": 1, "title": "Math" }
+  ]
+}
