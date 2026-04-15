@@ -21,6 +21,8 @@ const appendsFunc =(data)=>{
         let img = document .createElement('img');
         
 
+        maindiv.class="";
+
         title.classList="title";
 
         title.innerText=el.title;
