@@ -1,237 +1,67 @@
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img1.webp?raw=true",
-    "title":"Men's Black Formal Leather Belt",
-    "price":"869.00"
-}
+<!DOCTYPE html>
+<html lang="en">
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img2.webp?raw=true",
-    "title":"Men's Brown Leather Belt",
-    "price":"1,019.00"
-"
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img3.webp?raw=true",
-    "title":"Black Grey Genuine Leather Wallet for Men",
-    "price":"899.00"
-}
+<body>
+    <div class="container">
+        <div class="row" id="info"></div>
+    </div>
+</body>
+<script>
+    const api = `https://fakestoreapi.com/products`;
 
+    const Apicall = () => {
+        fetch(api)
+            .then((res) => res.json())
+            .then((res) => fundata(res))
+            .catch((err) => console.log(err))
+    }
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img4.webp?raw=true",
-    "title":"Brown 8 Wheels Trolley Bag Set of 3",
-    "price":"14,395.00"
-}
+    Apicall();
 
+    let fundata = (data) => {
+        let container = document.getElementById('info');
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img6.webp?raw=true",
-    "title":"Solid Baseball Unisex Cap for Men",
-    "price":" 599.00"
-}
+        data.forEach(el => {
+            container.innerHTML += `
+                 
+             <div class="col-12 col-md-6 col-lg-3">
 
+                <div class="card h-100">
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img7.webp?raw=true",
-    "title":"16 Inch Laptop Backpack for Men ",
-    "price":"2,299.00"
-}
+            <div class="card-body">
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img8.webp?raw=true",
-    "title":"Brown 8 Wheels Trolley Bag Set of 2",
-    "price":"7,798.00"
-}
+            <img src="${el.image}" class="card-img-top" style="height:200px; object-fit:contain;">
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img9.webp?raw=true",
-    "title":"Gunmetal Black 8 Wheels Trolley Bag Set of",
-    "price":" 9,897.00"
-}
+            <h6 class="card-title">"${el.title}"</h6>
+            <p class="text-success fw-bold">₹ ${el.price}</p>
+            <button class="btn btn-primary w-100">Buy Now</button>
+          </div>
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img10.webp?raw=true",
-    "title":"100L Hard Luggage Trolley Bag for Travel",
-    "price":"6,598.00"
-}
+                    </div>
+                </div>
+            </div>
 
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img11.webp?raw=true",
-    "title":"Navy and White Polo T-Shirt for Women",
-    "price":"1,079.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img12.webp?raw=true",
-    "title":"60L Hard Luggage Trolley Bag for Travel",
-    "price":" 4,499.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img13.webp?raw=true",
-    "title":"100L Hard Luggage Trolley Bag for Travel",
-    "price":"6,598.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img14.webp?raw=true",
-    "title":"Men's Genuine Leather Wallet and Belt Combo Gift Set",
-    "price":"1,919.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img15.webp?raw=true",
-    "title":"Aura Eau De Parfum for Women 50ML",
-    "price":"899.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img16.webp?raw=true",
-    "title":"100L Hard Luggage Trolley Bag for Travel",
-    "price":"6,598"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img17.jpg?raw=true",
-    "title":"Men's Brown Genuine Leather Wallet & Belt Combo Gift Set",
-    "price":"1,709.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img18.webp?raw=true",
-    "title":"Black Solid Baseball Unisex Cap for Men",
-    "price":" 569.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img19.webp?raw=true",
-    "title":"Solid Baseball Unisex Cap for Men",
-    "price":"599.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/a_img20.webp?raw=true",
-    "title":"Brown Men's Leather Wallet",
-    "price":"959.00"
-}
+             `
+        });
+    }
 
 
 
 
-<!-- wowman  -->
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_10img.webp?raw=true",
-    "title":"Athleisure Sports Shoes for Women",
-    "price":"1,598.00"
-}
 
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_11img.webp?raw=true",
-    "title":"ETPU Athleisure Shoes for Women",
-    "price":"1,598.00"
-}
 
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_12img.webp?raw=true",
-    "title":"Sports Shoes for Women in Grey and Blue",
-    "price":"1,365.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_13img.webp?raw=true",
-    "title":"Shirts for Women in Black ",
-    "price":"1,078.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_14img.webp?raw=true",
-    "title":"Women's Sliders in Light Orange",
-    "price":"1,078.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_15img.webp?raw=true",
-    "title":"Casual Sneaker Shoes for Women",
-    "price":"1,088.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_16img.webp?raw=true",
-    "title":"Women's Casual Shoes ",
-    "price":"1,241.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_17img.webp?raw=true",
-    "title":"Shirts for Women in Black",
-    "price":"1,078.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_18img.webp?raw=true",
-    "title":"White T-Shirt for Women",
-    "price":"689.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_19img.webp?raw=true",
-    "title":"Navy and White Polo T-Shirt for Women",
-    "price":"1,079.00"
-}
 
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_20img.webp?raw=true",
-    "title":"Black Pants for Women",
-    "price":" 1,529.00"
-}
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_2img.webp?raw=true",
-    "title":"Red Tape Lifestyle Sneaker Shoes for Women",
-    "price":"1,088.00"
-}
+</script>
 
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_3img.webp?raw=true",
-    "title":"Red T-Shirt for Women",
-    "price":"689.00"
-}
-
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_4img.webp?raw=true",
-    "title":"White Polo T-Shirt for Women",
-    "price":"1,199.00"
-}
-
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_6img.webp?raw=true",
-    "title":"White T-Shirt for Women",
-    "price":"689.00"
-}
-
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_7img.webp?raw=true",
-    "title":"Beige T-Shirt for Women",
-    "price":"689.00"
-}
-
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_8img.webp?raw=true",
-    "title":"Beige Co-Ord Sets Women ",
-    "price":"1,583.00"
-}
-
-{
-    "img":"https://github.com/yadav-khushi293/PRACTICE/blob/main/w_9img.webp?raw=true",
-    "title":"Off-White Padded Jacket for Women",
-    "price":"1,358.00"
-}
+</html>
