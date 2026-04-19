@@ -25,7 +25,6 @@ function showData(items) {
 
       </div>
 
-
     `;
   });
 }
