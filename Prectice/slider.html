@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+.slider{
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slides{
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slides img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;   /* Important */
+}
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:20px;
+}
+
+.tab{
+  cursor:pointer;
+  padding-bottom:8px;
+}
+
+.tab.active{
+  border-bottom:3px solid orange;
+}
+</style>
+
+<body>
+   <div class="slider">
+  <div class="slides">
+    <img src="../a_img1.webp" alt="">
+    <img src="../a_img10.webp" alt="">
+    <img src="../a_img12.webp" alt="">
+    <img src="../a_img13.webp" alt="">
+  </div>
+</div>
+
+<div class="tabs">
+  <span class="tab active">Diver's</span>
+  <span class="tab">Sale</span>
+  <span class="tab">Raga</span>
+  <span class="tab">International</span>
+</div>
+
+</body>
+<script>
+  const slides = document.querySelector(".slides");
+const tabs = document.querySelectorAll(".tab");
+
+let current = 0;
+
+function updateSlider() {
+  slides.style.transform = `translateX(-${current * 100}%)`;
+
+  tabs.forEach(tab => tab.classList.remove("active"));
+  tabs[current].classList.add("active");
+}
+
+setInterval(() => {
+  current = (current + 1) % tabs.length;
+  updateSlider();
+}, 3000);
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    current = index;
+    updateSlider();
+  });
+});
+</script>
+</html>

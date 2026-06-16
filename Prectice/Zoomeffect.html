@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Zoom</title>
+
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f5f5f5;
+}
+
+.image-container{
+    position:relative;
+    width:400px;
+    overflow:hidden;
+    border-radius:10px;
+    cursor:crosshair;
+}
+
+.image-container img{
+    width:100%;
+    display:block;
+}
+
+#zoomLens{
+    position:absolute;
+    width:150px;
+    height:150px;
+    border:2px solid #000;
+    border-radius:50%;
+    pointer-events:none;
+    display:none;
+
+    background-repeat:no-repeat;
+    background-size:800px 800px;
+}
+</style>
+<body>
+
+<div class="image-container">
+    <img id="productImage"
+         src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800"
+         alt="Product">
+
+    <div id="zoomLens"></div>
+</div>
+
+<script>
+    const image = document.getElementById("productImage");
+const lens = document.getElementById("zoomLens");
+
+image.addEventListener("mousemove", zoomImage);
+image.addEventListener("mouseenter", () => {
+    lens.style.display = "block";
+});
+
+image.addEventListener("mouseleave", () => {
+    lens.style.display = "none";
+});
+
+function zoomImage(e) {
+
+    const rect = image.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    lens.style.left = `${x - lens.offsetWidth / 2}px`;
+    lens.style.top = `${y - lens.offsetHeight / 2}px`;
+
+    lens.style.backgroundImage = `url(${image.src})`;
+
+    const zoom = 2;
+
+    lens.style.backgroundSize =
+        `${image.width * zoom}px ${image.height * zoom}px`;
+
+    lens.style.backgroundPosition =
+        `-${x * zoom - lens.offsetWidth / 2}px
+         -${y * zoom - lens.offsetHeight / 2}px`;
+}
+</script>
+</body>
+</html>
